@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#070d1a">
+  <title>ΚΑΥΚΑΣ — Έξυπνες συσκευές & ηλεκτρολογικό υλικό</title>
+  <meta name="description" content="ΚΑΥΚΑΣ — Έξυπνες συσκευές, gadgets και ηλεκτρολογικό υλικό για κάθε σπίτι και επιχείρηση. Γνήσια προϊόντα, εγγύηση και αποστολή σε όλη την Ελλάδα.">
+  <link rel="icon" type="image/png" href="assets/logo.png">
+  <link rel="apple-touch-icon" href="assets/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body data-page="home">
+  <div id="site-header"></div>
+
+  <main>
+    <!-- CATEGORIES -->
+    <section class="section" id="categories">
+      <div class="container">
+        <div class="section-head center reveal">
+          <h2>Βρες ακριβώς αυτό που χρειάζεσαι</h2>
+          <p>Από έξυπνες πρίζες μέχρι κάμερες ασφαλείας — όλα τα ηλεκτρολογικά σε ένα κατάστημα.</p>
+        </div>
+        <div class="cat-grid" id="catGrid"></div>
+      </div>
+    </section>
+
+    <!-- MOVING STRIP (under categories) -->
+    <section class="trust-bar">
+      <div class="marquee">
+        <div class="track" id="trustTrack"></div>
+      </div>
+    </section>
+
+    <!-- FEATURED PRODUCTS -->
+    <section class="section" style="padding-top:clamp(64px,9vw,120px)">
+      <div class="container">
+        <div class="section-head reveal" style="display:flex;align-items:flex-end;justify-content:space-between;max-width:none;gap:20px;flex-wrap:wrap">
+          <div style="flex:1;min-width:0">
+            <span class="eyebrow">Δημοφιλή</span>
+            <h2>Best sellers αυτή την εβδομάδα</h2>
+          </div>
+          <a class="btn btn-ghost" href="shop.html">Όλα τα προϊόντα <span style="display:inline-flex">→</span></a>
+        </div>
+        <div class="product-grid" id="featuredGrid"></div>
+      </div>
+    </section>
+
+    <!-- SPLIT SHOWCASE -->
+    <section class="section">
+      <div class="container split">
+        <div class="panel reveal">
+          <div class="pv" style="--pv-tint:rgba(77,163,255,0.4);border-radius:inherit" id="showcaseVisual"></div>
+        </div>
+        <div class="reveal" data-delay="1">
+          <span class="eyebrow">Έξυπνο σπίτι</span>
+          <h2 style="font-size:clamp(1.8rem,4vw,2.7rem);margin-top:14px">Το σπίτι σου, πιο έξυπνο από ποτέ</h2>
+          <p style="color:var(--muted);margin-top:14px">Συνδύασε φωτισμό, ασφάλεια και αυτοματισμούς σε ένα οικοσύστημα που δουλεύει για σένα — με έλεγχο από το κινητό ή τη φωνή σου.</p>
+          <ul class="check-list">
+            <li><span class="ck" id="ck1"></span><div><strong>Έλεγχος από παντού</strong><span>Άναψε, σβήσε και προγραμμάτισε από το κινητό σου.</span></div></li>
+            <li><span class="ck" id="ck2"></span><div><strong>Εξοικονόμηση ενέργειας</strong><span>Μείωσε τους λογαριασμούς με έξυπνο προγραμματισμό.</span></div></li>
+            <li><span class="ck" id="ck3"></span><div><strong>Συμβατότητα</strong><span>Δουλεύει με Alexa, Google και Apple Home.</span></div></li>
+          </ul>
+          <a class="btn btn-accent btn-lg" href="shop.html?cat=smart-home" style="margin-top:26px">Ανακάλυψε το Smart Home</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY US -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head center reveal">
+          <span class="eyebrow">Γιατί ΚΑΥΚΑΣ</span>
+          <h2>Αγοράζεις με σιγουριά</h2>
+        </div>
+        <div class="feature-grid" id="whyGrid"></div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="section" style="padding-top:0">
+      <div class="container">
+        <div class="section-head center reveal">
+          <span class="eyebrow">Αξιολογήσεις</span>
+          <h2>Χιλιάδες πελάτες μας εμπιστεύονται</h2>
+        </div>
+        <div class="testi-grid" id="testiGrid"></div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section" style="padding-top:0">
+      <div class="container">
+        <div class="cta-banner reveal">
+          <span class="eyebrow" style="justify-content:center">Newsletter</span>
+          <h2 style="margin-top:14px">Μείνε ένα βήμα μπροστά</h2>
+          <p>Γράψου και κέρδισε <b class="text-gold">10% έκπτωση</b> στην πρώτη σου παραγγελία, μαζί με αποκλειστικές προσφορές.</p>
+          <form class="subscribe" id="newsletterForm">
+            <input type="email" required placeholder="Το email σου" aria-label="Email">
+            <button class="btn btn-accent" type="submit">Εγγραφή</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // check icons (split section)
+      const set = (id, name) => { const el = document.getElementById(id); if (el) el.innerHTML = icon(name); };
+      set('ck1', 'check'); set('ck2', 'check'); set('ck3', 'check');
+      document.getElementById('showcaseVisual').innerHTML = `<span class="glow-blob"></span><span class="device" style="width:42%;height:42%">${icon('smarthome')}</span>`;
+
+      // trust marquee
+      const items = [['truck','Δωρεάν αποστολή άνω των €49'],['shield','2 χρόνια εγγύηση'],['refresh','14 ημέρες επιστροφές'],['card','Ασφαλείς πληρωμές'],['headset','Υποστήριξη 6 ημέρες'],['award','Γνήσια προϊόντα'],['cash','Αντικαταβολή']];
+      const one = items.map(([ic,t]) => `<span class="item">${icon(ic)} ${t}</span>`).join('');
+      document.getElementById('trustTrack').innerHTML = one + one;
+
+      // categories
+      document.getElementById('catGrid').innerHTML = CATEGORIES.map((c, i) => `
+        <a class="cat-card reveal ${i === 0 ? 'feature' : ''}" data-delay="${(i % 4)}" href="shop.html?cat=${c.slug}">
+          <span class="c-glow"></span>
+          <span class="c-ic">${icon(c.icon)}</span>
+          <div><h3>${c.name}</h3><div class="c-count">${catCount(c.slug)} προϊόντα</div></div>
+          <span class="c-arrow">Δες περισσότερα ${icon('arrowRight')}</span>
+        </a>`).join('');
+
+      // featured (best sellers by reviews)
+      const featured = PRODUCTS.slice().sort((a,b)=>b.reviews-a.reviews).slice(0,8);
+      document.getElementById('featuredGrid').innerHTML = featured.map((p,i)=>{ const h=productCard(p); return h.replace('class="product-card reveal"', `class="product-card reveal" data-delay="${(i%4)+1}"`); }).join('');
+
+      // why us
+      const why = [
+        ['truck','Γρήγορη αποστολή','Παράδοση σε 1–3 εργάσιμες σε όλη την Ελλάδα, με δωρεάν μεταφορικά άνω των €49.'],
+        ['shield','Γνήσια & εγγύηση','100% αυθεντικά προϊόντα με επίσημη εγγύηση κατασκευαστή και απόδειξη.'],
+        ['refresh','Εύκολες επιστροφές','14 ημέρες για να αλλάξεις γνώμη — χωρίς περίπλοκες διαδικασίες.'],
+        ['headset','Πραγματική υποστήριξη','Ομάδα ειδικών έτοιμη να σε βοηθήσει να διαλέξεις σωστά.'],
+        ['card','Ασφαλείς πληρωμές','Κρυπτογραφημένες συναλλαγές, κάρτα, PayPal ή αντικαταβολή.'],
+        ['spark','Επιλεγμένη γκάμα','Δοκιμάζουμε ό,τι πουλάμε. Μόνο προϊόντα που θα αγοράζαμε κι εμείς.']
+      ];
+      document.getElementById('whyGrid').innerHTML = why.map((w,i)=>`
+        <div class="feature-card reveal" data-delay="${(i%3)+1}">
+          <div class="f-ic">${icon(w[0])}</div>
+          <h3>${w[1]}</h3><p>${w[2]}</p>
+        </div>`).join('');
+
+      // testimonials
+      const testi = [
+        ['Γιώργος Π.','Αγόρασε: Soundbar 2.1','Απίστευτη εξυπηρέτηση και ταχύτατη παράδοση. Το soundbar ξεπέρασε τις προσδοκίες μου!'],
+        ['Μαρία Κ.','Αγόρασε: Smart Home Kit','Έκανα όλο το σπίτι έξυπνο με τη βοήθειά τους. Με καθοδήγησαν σε κάθε βήμα.'],
+        ['Δημήτρης Α.','Αγόρασε: Power Bank 20.000','Τιμές καλύτερες από οπουδήποτε αλλού και γνήσια προϊόντα. Θα ξαναψωνίσω σίγουρα.']
+      ];
+      document.getElementById('testiGrid').innerHTML = testi.map((t,i)=>`
+        <div class="testi reveal" data-delay="${(i%3)+1}">
+          ${starsHtml(5)}
+          <p>“${t[2]}”</p>
+          <div class="who"><div class="avatar">${t[0][0]}</div><div><b>${t[0]}</b><small>${t[1]}</small></div></div>
+        </div>`).join('');
+
+      scanReveal(document);
+
+      document.getElementById('newsletterForm').addEventListener('submit', (e)=>{ e.preventDefault(); e.target.reset(); toast('Ευχαριστούμε! Έλεγξε το email σου για το κουπόνι.', 'gift'); });
+    });
+  </script>
+</body>
+</html>

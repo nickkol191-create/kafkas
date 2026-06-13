@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#070d1a">
+  <title>Σχετικά — ΚΑΥΚΑΣ</title>
+  <meta name="description" content="Η ιστορία, οι αξίες και η αποστολή του ΚΑΥΚΑΣ — έξυπνες συσκευές και ηλεκτρολογικό υλικό σε όλη την Ελλάδα.">
+  <link rel="icon" type="image/png" href="assets/logo.png">
+  <link rel="apple-touch-icon" href="assets/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body data-page="about">
+  <div id="site-header"></div>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <nav class="breadcrumbs reveal in"><a href="index.html">Αρχική</a> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 6 6 6-6 6"/></svg> <span>Σχετικά</span></nav>
+        <span class="eyebrow reveal in">Η ιστορία μας</span>
+        <h1 class="reveal in" data-delay="1" style="margin-top:14px">Φέρνουμε την τεχνολογία<br>πιο κοντά σου</h1>
+        <p class="reveal in" data-delay="2" style="max-width:60ch">Ξεκινήσαμε με μια απλή ιδέα: ο καθένας αξίζει πρόσβαση σε αξιόπιστα ηλεκτρονικά, σε δίκαιες τιμές και με ανθρώπινη εξυπηρέτηση. Σήμερα, χιλιάδες πελάτες σε όλη την Ελλάδα μας εμπιστεύονται για το έξυπνο σπίτι τους.</p>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:30px">
+      <div class="container">
+        <div class="stat-band">
+          <div class="stat-card reveal" data-delay="1"><div class="num">12<b>χιλ.+</b></div><div class="lbl">Πελάτες</div></div>
+          <div class="stat-card reveal" data-delay="2"><div class="num">2.5<b>χιλ.</b></div><div class="lbl">Προϊόντα</div></div>
+          <div class="stat-card reveal" data-delay="3"><div class="num">98<b>%</b></div><div class="lbl">Θετικές κριτικές</div></div>
+          <div class="stat-card reveal" data-delay="4"><div class="num">1–3<b>ημ.</b></div><div class="lbl">Παράδοση</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:0">
+      <div class="container split">
+        <div class="panel reveal"><div class="pv" style="--pv-tint:rgba(52,224,255,0.4);border-radius:inherit" id="aboutVisual"></div></div>
+        <div class="reveal" data-delay="1">
+          <span class="eyebrow">Η αποστολή μας</span>
+          <h2 style="font-size:clamp(1.7rem,3.6vw,2.5rem);margin-top:14px">Ποιότητα χωρίς συμβιβασμούς</h2>
+          <p style="color:var(--muted);margin-top:14px">Επιλέγουμε με προσοχή κάθε προϊόν στη γκάμα μας. Δεν πουλάμε τίποτα που δεν θα χρησιμοποιούσαμε κι εμείς στο δικό μας σπίτι. Κάθε συσκευή είναι γνήσια, με επίσημη εγγύηση και πραγματική υποστήριξη πίσω της.</p>
+          <ul class="check-list">
+            <li><span class="ck" id="ac1"></span><div><strong>Επιλεγμένη γκάμα</strong><span>Μόνο προϊόντα που έχουμε δοκιμάσει και εμπιστευόμαστε.</span></div></li>
+            <li><span class="ck" id="ac2"></span><div><strong>Δίκαιες τιμές</strong><span>Χωρίς κρυφές χρεώσεις, με συχνές προσφορές.</span></div></li>
+            <li><span class="ck" id="ac3"></span><div><strong>Άνθρωποι, όχι bots</strong><span>Πραγματική εξυπηρέτηση από ειδικούς.</span></div></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:0">
+      <div class="container">
+        <div class="section-head center reveal"><span class="eyebrow">Οι αξίες μας</span><h2>Αυτά που μας καθοδηγούν</h2></div>
+        <div class="value-grid" id="valueGrid"></div>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:0">
+      <div class="container">
+        <div class="section-head center reveal"><span class="eyebrow">Η διαδρομή</span><h2>Η πορεία μας μέχρι σήμερα</h2></div>
+        <div class="timeline" id="timeline"></div>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:0">
+      <div class="container">
+        <div class="cta-banner reveal">
+          <h2>Έτοιμος να ανακαλύψεις;</h2>
+          <p>Περιήγησε στη γκάμα μας και βρες την επόμενη έξυπνη συσκευή σου.</p>
+          <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:24px">
+            <a class="btn btn-accent btn-lg" href="shop.html">Στο κατάστημα</a>
+            <a class="btn btn-ghost btn-lg" href="contact.html">Επικοινωνία</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      ['ac1','ac2','ac3'].forEach(id => document.getElementById(id).innerHTML = icon('check'));
+      document.getElementById('aboutVisual').innerHTML = `<span class="glow-blob"></span><span class="device" style="width:42%;height:42%">${icon('award')}</span>`;
+
+      const values = [
+        ['shield','Αξιοπιστία','Γνήσια προϊόντα και διαφάνεια σε κάθε βήμα της αγοράς.'],
+        ['spark','Καινοτομία','Παρακολουθούμε τις τάσεις για να σου φέρνουμε το επόμενο μεγάλο πράγμα.'],
+        ['headset','Ανθρωπιά','Πίσω από κάθε παραγγελία υπάρχει μια ομάδα που νοιάζεται.'],
+        ['zap','Ταχύτητα','Γρήγορη επεξεργασία και αποστολή, χωρίς καθυστερήσεις.'],
+        ['award','Ποιότητα','Επιλεγμένη γκάμα με αυστηρά κριτήρια.'],
+        ['refresh','Δέσμευση','Είμαστε δίπλα σου και μετά την αγορά.']
+      ];
+      document.getElementById('valueGrid').innerHTML = values.map((v,i)=>`
+        <div class="feature-card reveal" data-delay="${(i%3)+1}"><div class="f-ic">${icon(v[0])}</div><h3>${v[1]}</h3><p>${v[2]}</p></div>`).join('');
+
+      const tl = [
+        ['2018','Η αρχή','Ανοίξαμε το πρώτο μας κατάστημα με ένα μικρό αλλά επιλεγμένο catalog.'],
+        ['2020','Online','Λανσάραμε το e-shop μας και φτάσαμε σε όλη την Ελλάδα.'],
+        ['2022','Smart Home','Επεκταθήκαμε στον κόσμο του έξυπνου σπιτιού και των αυτοματισμών.'],
+        ['2024','12.000+ πελάτες','Γίναμε σημείο αναφοράς για ποιοτικά ηλεκτρονικά σε δίκαιες τιμές.']
+      ];
+      document.getElementById('timeline').innerHTML = tl.map((t,i)=>`
+        <div class="tl-item reveal" data-delay="${(i%3)+1}"><span class="dot"></span><div class="yr">${t[0]}</div><h4>${t[1]}</h4><p>${t[2]}</p></div>`).join('');
+
+      scanReveal(document);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#070d1a">
+  <title>Κατάστημα — ΚΑΥΚΑΣ</title>
+  <meta name="description" content="Περιήγηση σε όλα τα προϊόντα ΚΑΥΚΑΣ: smart home, φωτισμός, ήχος, καλώδια, ενέργεια, gadgets, αξεσουάρ και ασφάλεια.">
+  <link rel="icon" type="image/png" href="assets/logo.png">
+  <link rel="apple-touch-icon" href="assets/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body data-page="shop">
+  <div id="site-header"></div>
+
+  <main>
+    <section class="page-hero" id="shopTop">
+      <div class="container">
+        <nav class="breadcrumbs reveal in"><a href="index.html">Αρχική</a> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 6 6 6-6 6"/></svg> <span>Κατάστημα</span></nav>
+        <h1 class="reveal in" id="shopTitle">Όλα τα προϊόντα</h1>
+        <p class="reveal in" data-delay="1">Επιλεγμένα ηλεκτρονικά και ηλεκτρολογικά, με γνήσια εγγύηση και αποστολή σε όλη την Ελλάδα.</p>
+        <div class="chips reveal in" data-delay="2" id="catChips" style="margin-top:22px"></div>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:10px">
+      <div class="container">
+        <div class="shop-layout">
+          <!-- Filters -->
+          <aside class="filters" id="filtersPanel">
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px">
+              <h3 style="font-size:1.1rem">Φίλτρα</h3>
+              <button class="icon-btn" id="filtersClose" aria-label="Κλείσιμο" style="display:none"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+            </div>
+            <div class="fgroup">
+              <h4>Κατηγορία</h4>
+              <div id="catFilters" style="display:flex;flex-direction:column;gap:2px"></div>
+            </div>
+            <div class="fgroup">
+              <h4>Μέγιστη τιμή</h4>
+              <input type="range" id="priceRange" min="10" max="200" step="5" value="200" style="width:100%;accent-color:var(--accent)">
+              <div style="display:flex;justify-content:space-between;margin-top:8px;color:var(--muted);font-size:.85rem">
+                <span>€10</span><span id="priceVal" style="color:var(--accent);font-weight:700">€200+</span>
+              </div>
+            </div>
+            <div class="fgroup">
+              <h4>Ταξινόμηση</h4>
+              <select class="select" id="sortSelect">
+                <option value="pop">Δημοφιλέστερα</option>
+                <option value="new">Νεότερα</option>
+                <option value="price-asc">Τιμή: αύξουσα</option>
+                <option value="price-desc">Τιμή: φθίνουσα</option>
+                <option value="rating">Καλύτερη αξιολόγηση</option>
+              </select>
+            </div>
+          </aside>
+
+          <!-- Grid -->
+          <div>
+            <div class="shop-toolbar">
+              <div class="shop-search">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-3.5-3.5"/></svg>
+                <input type="search" id="shopSearch" placeholder="Αναζήτηση προϊόντος…" aria-label="Αναζήτηση">
+              </div>
+              <div style="display:flex;align-items:center;gap:14px">
+                <span class="shop-count" id="shopCount"></span>
+                <button class="btn btn-ghost btn-sm filter-toggle" id="filterToggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:1.1em;height:1.1em"><path d="M4 6h16M4 12h16M4 18h16M9 4v4M16 10v4M7 16v4"/></svg> Φίλτρα</button>
+              </div>
+            </div>
+            <div class="product-grid" id="shopGrid"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/shop.js"></script>
+</body>
+</html>

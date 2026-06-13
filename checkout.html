@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#070d1a">
+  <title>Ταμείο — ΚΑΥΚΑΣ</title>
+  <link rel="icon" type="image/png" href="assets/logo.png">
+  <link rel="apple-touch-icon" href="assets/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body data-page="shop">
+  <div id="site-header"></div>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <nav class="breadcrumbs reveal in"><a href="cart.html">Καλάθι</a> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 6 6 6-6 6"/></svg> <span>Ταμείο</span></nav>
+        <h1 class="reveal in">Ολοκλήρωση παραγγελίας</h1>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:14px">
+      <div class="container" id="checkoutMain">
+        <form class="checkout-layout" id="checkoutForm">
+          <div>
+            <!-- Contact -->
+            <div class="checkout-section reveal in">
+              <div class="cs-head"><span class="cs-num">1</span><h3>Στοιχεία επικοινωνίας</h3></div>
+              <div class="field-row">
+                <div class="field"><label>Όνομα <span class="req">*</span></label><input class="input" required placeholder="Γιώργος"></div>
+                <div class="field"><label>Επώνυμο <span class="req">*</span></label><input class="input" required placeholder="Παπαδόπουλος"></div>
+              </div>
+              <div class="field-row">
+                <div class="field"><label>Email <span class="req">*</span></label><input class="input" type="email" required placeholder="you@email.com"></div>
+                <div class="field"><label>Τηλέφωνο <span class="req">*</span></label><input class="input" type="tel" required placeholder="69ΧΧ ΧΧΧ ΧΧΧ"></div>
+              </div>
+            </div>
+
+            <!-- Shipping -->
+            <div class="checkout-section reveal in" data-delay="1">
+              <div class="cs-head"><span class="cs-num">2</span><h3>Διεύθυνση αποστολής</h3></div>
+              <div class="field"><label>Διεύθυνση <span class="req">*</span></label><input class="input" required placeholder="Οδός & αριθμός"></div>
+              <div class="field-row">
+                <div class="field"><label>Πόλη <span class="req">*</span></label><input class="input" required placeholder="Πόλη"></div>
+                <div class="field"><label>Τ.Κ. <span class="req">*</span></label><input class="input" required placeholder="ΧΧΧ ΧΧ"></div>
+              </div>
+              <div class="field"><label>Σημειώσεις παράδοσης</label><textarea class="textarea" placeholder="π.χ. κουδούνι, όροφος, ώρες παράδοσης…"></textarea></div>
+            </div>
+
+            <!-- Payment -->
+            <div class="checkout-section reveal in" data-delay="2">
+              <div class="cs-head"><span class="cs-num">3</span><h3>Τρόπος πληρωμής</h3></div>
+              <div class="pay-methods" id="payMethods">
+                <label class="pay-opt active" data-pay="card"><span class="radio"></span><div><b>Κάρτα</b><div style="color:var(--muted);font-size:.84rem">Visa, Mastercard, Maestro</div></div><span class="p-ic" id="payCard"></span></label>
+                <label class="pay-opt" data-pay="paypal"><span class="radio"></span><div><b>PayPal</b><div style="color:var(--muted);font-size:.84rem">Πληρωμή με τον λογαριασμό σου</div></div><span class="p-ic" id="payPaypal"></span></label>
+                <label class="pay-opt" data-pay="cod"><span class="radio"></span><div><b>Αντικαταβολή</b><div style="color:var(--muted);font-size:.84rem">Πληρωμή κατά την παράδοση (+€2)</div></div><span class="p-ic" id="payCash"></span></label>
+              </div>
+              <div id="cardFields" style="margin-top:18px">
+                <div class="field"><label>Αριθμός κάρτας</label><input class="input" inputmode="numeric" placeholder="1234 5678 9012 3456"></div>
+                <div class="field-row">
+                  <div class="field"><label>Λήξη</label><input class="input" placeholder="MM/YY"></div>
+                  <div class="field"><label>CVV</label><input class="input" inputmode="numeric" placeholder="123"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Summary -->
+          <aside class="summary checkout-summary reveal in" data-delay="1">
+            <h3>Η παραγγελία σου</h3>
+            <div id="orderSummary"></div>
+            <button class="btn btn-accent btn-block btn-lg" type="submit" id="placeOrder" style="margin-top:18px">Ολοκλήρωση παραγγελίας</button>
+            <p style="text-align:center;color:var(--muted);font-size:.8rem;margin-top:12px">Με την ολοκλήρωση αποδέχεσαι τους όρους χρήσης.</p>
+          </aside>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/checkout.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      document.getElementById('payCard').innerHTML = icon('card');
+      document.getElementById('payPaypal').innerHTML = icon('paypal');
+      document.getElementById('payCash').innerHTML = icon('cash');
+    });
+  </script>
+</body>
+</html>
