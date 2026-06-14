@@ -772,6 +772,8 @@ h1, h2, h3, h4 {
 
 .shop-toolbar { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; justify-content: space-between; margin-bottom: 22px; }
 .shop-search { position: relative; flex: 1; min-width: 200px; max-width: 380px; }
+/* inside the search panel (a column flex) it must not stretch vertically, or the icon floats to the middle */
+.drawer-body .shop-search { flex: 0 0 auto; max-width: none; }
 .shop-search svg { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); width: 19px; height: 19px; color: var(--muted); }
 .shop-search input { width: 100%; padding: 0.78em 1em 0.78em 2.7em; border-radius: 999px; background: var(--glass-2); border: 1px solid var(--line-strong); transition: border-color var(--t-fast), box-shadow var(--t-fast); -webkit-appearance: none; appearance: none; }
 /* hide the native search-field magnifier/clear (the "wandering" icon on mobile) */
