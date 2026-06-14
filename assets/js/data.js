@@ -174,7 +174,6 @@ function productCard(p) {
   return `<article class="product-card reveal" data-id="${p.id}">
     <div class="pv-wrap">
       ${badge}
-      <button class="wish-btn" aria-label="Προσθήκη στα αγαπημένα" data-wish="${p.id}">${icon('heart')}</button>
       <a href="product.html?id=${p.id}" aria-label="${p.name}">${productVisual(p)}</a>
     </div>
     <div class="pc-body">

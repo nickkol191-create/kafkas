@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // category clicks (sidebar + chips)
   document.addEventListener('click', (e) => {
     const b = e.target.closest('[data-cat]');
-    if (b) { ShopState.cat = b.getAttribute('data-cat'); renderAllShop(); document.getElementById('filtersPanel')?.classList.remove('open'); window.scrollTo({ top: document.getElementById('shopTop')?.offsetTop - 90 || 0, behavior: 'smooth' }); }
+    if (b) { ShopState.cat = b.getAttribute('data-cat'); renderAllShop(); document.getElementById('filtersPanel')?.classList.remove('open'); document.getElementById('filtersScrim')?.classList.remove('open'); window.scrollTo({ top: document.getElementById('shopTop')?.offsetTop - 90 || 0, behavior: 'smooth' }); }
   });
 
   document.getElementById('shopSearch')?.addEventListener('input', (e) => { ShopState.q = e.target.value; applyShop(); });
@@ -94,6 +94,11 @@ document.addEventListener('DOMContentLoaded', () => {
     applyShop();
   });
 
-  document.getElementById('filterToggle')?.addEventListener('click', () => document.getElementById('filtersPanel')?.classList.add('open'));
-  document.getElementById('filtersClose')?.addEventListener('click', () => document.getElementById('filtersPanel')?.classList.remove('open'));
+  const fPanel = document.getElementById('filtersPanel');
+  const fScrim = document.getElementById('filtersScrim');
+  const openFilters = () => { fPanel?.classList.add('open'); fScrim?.classList.add('open'); };
+  const closeFilters = () => { fPanel?.classList.remove('open'); fScrim?.classList.remove('open'); };
+  document.getElementById('filterToggle')?.addEventListener('click', openFilters);
+  document.getElementById('filtersClose')?.addEventListener('click', closeFilters);
+  fScrim?.addEventListener('click', closeFilters);
 });

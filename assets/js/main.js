@@ -113,7 +113,6 @@ function buildHeader(active) {
   <div class="mobile-panel" id="mobilePanel">
     <div class="inner">
       <div class="mp-head">
-        <a class="brand" href="index.html"><span class="brand-logo"><img src="assets/logo.png" alt="ΚΑΥΚΑΣ" width="44" height="44"></span><span class="wordmark">ΚΑΥ<b>ΚΑΣ</b></span></a>
         <button class="icon-btn" id="menuClose" aria-label="Κλείσιμο">${icon('close')}</button>
       </div>
       ${mLinkHtml}
@@ -226,7 +225,12 @@ function updateCartUI() {
           <div class="thumb">${productVisual(p)}</div>
           <div>
             <div class="mi-name">${p.name}</div>
-            <div class="mi-meta">${i.qty} × <span class="mi-price">${fmt(p.price)}</span></div>
+            <div class="mi-meta"><span class="mi-price">${fmt(p.price)}</span></div>
+            <div class="mini-qty">
+              <button data-ddec="${p.id}" aria-label="Μείωση">${icon('minus')}</button>
+              <span class="q">${i.qty}</span>
+              <button data-dinc="${p.id}" aria-label="Αύξηση">${icon('plus')}</button>
+            </div>
           </div>
           <button class="mi-remove" data-remove="${p.id}" aria-label="Αφαίρεση">${icon('trash')}</button>
         </div>`;
@@ -374,8 +378,12 @@ function mountChrome(active) {
   });
 
   const panel = document.getElementById('mobilePanel');
-  document.getElementById('menuToggle')?.addEventListener('click', () => panel?.classList.add('open'));
-  document.getElementById('menuClose')?.addEventListener('click', () => panel?.classList.remove('open'));
+  const menuBtn = document.getElementById('menuToggle');
+  menuBtn?.addEventListener('click', () => {
+    const open = panel?.classList.toggle('open');
+    menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  document.getElementById('menuClose')?.addEventListener('click', () => { panel?.classList.remove('open'); menuBtn?.setAttribute('aria-expanded', 'false'); });
   panel?.addEventListener('click', (e) => { if (e.target === panel) panel.classList.remove('open'); });
 
   document.addEventListener('keydown', (e) => {
@@ -388,6 +396,10 @@ function mountChrome(active) {
     if (add) { e.preventDefault(); addToCart(add.getAttribute('data-add')); flyToCart(add); return; }
     const rem = e.target.closest('[data-remove]');
     if (rem) { e.preventDefault(); removeFromCart(rem.getAttribute('data-remove')); return; }
+    const dinc = e.target.closest('[data-dinc]');
+    if (dinc) { e.preventDefault(); const id = dinc.getAttribute('data-dinc'); const l = getCart().find(x => x.id === id); setQty(id, (l ? l.qty : 1) + 1); return; }
+    const ddec = e.target.closest('[data-ddec]');
+    if (ddec) { e.preventDefault(); const id = ddec.getAttribute('data-ddec'); const l = getCart().find(x => x.id === id); setQty(id, (l ? l.qty : 1) - 1); return; }
     const wish = e.target.closest('[data-wish]');
     if (wish) { e.preventDefault(); wish.classList.toggle('active'); toast(wish.classList.contains('active') ? 'Προστέθηκε στα αγαπημένα' : 'Αφαιρέθηκε από τα αγαπημένα', 'heart'); return; }
   });
