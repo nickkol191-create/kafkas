@@ -80,6 +80,8 @@ html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
     transition-duration: 0.001ms !important;
     scroll-behavior: auto !important;
   }
+  /* but keep the trust-bar marquee scrolling — it's a brand element, not a heavy effect */
+  .marquee .track { animation-duration: 32s !important; animation-iteration-count: infinite !important; }
 }
 
 body {
@@ -340,7 +342,7 @@ h1, h2, h3, h4 {
 .mobile-panel .inner {
   position: absolute; top: 0; right: 0; height: 100%; width: min(86vw, 360px);
   background: var(--navy-900); border-left: 1px solid var(--line);
-  padding: 26px; display: flex; flex-direction: column; gap: 8px;
+  padding: calc(var(--nav-h) + 20px) 26px 26px; display: flex; flex-direction: column; gap: 8px;
   transform: translateX(100%); transition: transform var(--t-slow) var(--ease-out);
   overflow-y: auto;
 }

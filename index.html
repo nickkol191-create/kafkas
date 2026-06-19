@@ -119,7 +119,7 @@
       document.getElementById('showcaseVisual').innerHTML = `<span class="glow-blob"></span><span class="device" style="width:42%;height:42%">${icon('smarthome')}</span>`;
 
       // trust marquee
-      const items = [['truck','Δωρεάν αποστολή άνω των €49'],['shield','2 χρόνια εγγύηση'],['refresh','14 ημέρες επιστροφές'],['card','Ασφαλείς πληρωμές'],['headset','Υποστήριξη 6 ημέρες'],['award','Γνήσια προϊόντα'],['cash','Αντικαταβολή']];
+      const items = [['shield','2 χρόνια εγγύηση'],['refresh','14 ημέρες επιστροφές'],['card','Ασφαλείς πληρωμές'],['headset','Υποστήριξη 6 ημέρες'],['award','Γνήσια προϊόντα'],['cash','Αντικαταβολή']];
       const one = items.map(([ic,t]) => `<span class="item">${icon(ic)} ${t}</span>`).join('');
       document.getElementById('trustTrack').innerHTML = one + one;
 
