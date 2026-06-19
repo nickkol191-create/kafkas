@@ -112,9 +112,6 @@ function buildHeader(active) {
 
   <div class="mobile-panel" id="mobilePanel">
     <div class="inner">
-      <div class="mp-head">
-        <button class="icon-btn" id="menuClose" aria-label="Κλείσιμο">${icon('close')}</button>
-      </div>
       ${mLinkHtml}
       <a class="btn btn-accent btn-block" href="shop.html" style="margin-top:14px">Αγορά τώρα ${icon('arrowRight')}</a>
     </div>
