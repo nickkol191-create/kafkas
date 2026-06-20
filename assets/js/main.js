@@ -3,6 +3,29 @@
    ===================================================================== */
 'use strict';
 
+/* ----------  Restore scroll position on refresh (content is JS-rendered) ---------- */
+if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+(function () {
+  const key = 'kafkas_scroll_' + location.pathname + location.search;
+  let queued = 0;
+  function save() { try { sessionStorage.setItem(key, String(Math.round(window.scrollY))); } catch (e) {} }
+  addEventListener('scroll', function () { if (queued) return; queued = requestAnimationFrame(function () { save(); queued = 0; }); }, { passive: true });
+  addEventListener('pagehide', save);
+  document.addEventListener('visibilitychange', function () { if (document.hidden) save(); });
+  const nav = (performance.getEntriesByType && performance.getEntriesByType('navigation')[0]) || {};
+  if (nav.type === 'reload' || nav.type === 'back_forward') {
+    addEventListener('load', function () {
+      let y = 0; try { y = parseInt(sessionStorage.getItem(key) || '0', 10) || 0; } catch (e) {}
+      if (y > 0) requestAnimationFrame(function () {
+        const html = document.documentElement, prev = html.style.scrollBehavior;
+        html.style.scrollBehavior = 'auto';
+        window.scrollTo(0, y);
+        html.style.scrollBehavior = prev;
+      });
+    });
+  }
+})();
+
 const STORE = {
   name: 'ΚΑΥΚΑΣ',
   freeShip: 49,
