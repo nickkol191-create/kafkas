@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/styles.css?v=4">
+  <link rel="stylesheet" href="assets/css/styles.css?v=5">
 </head>
 <body data-page="home">
   <div id="site-header"></div>
@@ -109,8 +109,8 @@
 
   <div id="site-footer"></div>
 
-  <script src="assets/js/data.js?v=4"></script>
-  <script src="assets/js/main.js?v=4"></script>
+  <script src="assets/js/data.js?v=5"></script>
+  <script src="assets/js/main.js?v=5"></script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       // check icons (split section)
@@ -121,7 +121,10 @@
       // trust marquee
       const items = [['shield','2 χρόνια εγγύηση'],['refresh','14 ημέρες επιστροφές'],['card','Ασφαλείς πληρωμές'],['headset','Υποστήριξη 6 ημέρες'],['award','Γνήσια προϊόντα'],['cash','Αντικαταβολή']];
       const one = items.map(([ic,t]) => `<span class="item">${icon(ic)} ${t}</span>`).join('');
-      document.getElementById('trustTrack').innerHTML = one + one;
+      const track = document.getElementById('trustTrack');
+      track.innerHTML = one + one;
+      // restart the CSS animation now that the bar has content (mobile sometimes won't run it otherwise)
+      track.style.animation = 'none'; void track.offsetWidth; track.style.animation = '';
 
       // categories
       document.getElementById('catGrid').innerHTML = CATEGORIES.map((c, i) => `
