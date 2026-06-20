@@ -379,6 +379,12 @@ function mountChrome(active) {
   menuBtn?.addEventListener('click', () => {
     const open = panel?.classList.toggle('open');
     menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    if (open) {
+      const header = document.getElementById('siteHeader');
+      const inner = panel.querySelector('.inner');
+      const top = header ? header.getBoundingClientRect().bottom : 100;
+      if (inner) inner.style.paddingTop = Math.max(top + 18, 96) + 'px';
+    }
   });
   document.getElementById('menuClose')?.addEventListener('click', () => { panel?.classList.remove('open'); menuBtn?.setAttribute('aria-expanded', 'false'); });
   panel?.addEventListener('click', (e) => { if (e.target === panel) panel.classList.remove('open'); });
